@@ -1,0 +1,36 @@
+import re  
+
+f = open("desktop/Walden.txt","r") 
+
+paper = f.read()  
+
+paper
+
+f.close()  
+
+paper = paper.lower()  
+
+paper = re.sub('[;,.?:"\'!-]','',paper)  
+
+print(paper)  
+word = paper.split()  
+
+print(word)  
+words = paper.split()  
+
+print(words)  
+words_sq = {}  
+
+for i in words:  
+   
+    if i not in words_sq.keys():  
+        
+        words_sq[i] = 1  
+    
+    else:  
+        
+        words_sq[i] += 1  
+
+res = sorted(words_sq.items(), key=lambda x:x[1], reverse=True)  
+
+print(res) 
